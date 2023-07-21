@@ -13,14 +13,19 @@ import { HeaderComponent } from './layout/header/header.component';
  * @description
  * Home page
  * @see HomeComponent
+ * @description
+ * Not found page
+ * @see NotfoundComponent
 */
 import { HomeComponent } from './pages/home/home.component';
+import { NotfoundComponent } from './pages/notfound/notfound.component';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    NotfoundComponent
   ],
   imports: [
     CommonModule,
