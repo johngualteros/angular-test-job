@@ -9,8 +9,8 @@
         <option *ngFor="let platform of platforms" value="{{ platform }}">{{ platform }}</option>
     </select>
     
-    <!-- <label for="genre">Seleccionar Genero</label>
-    <select name="genre" id="genre" (ngModelChange)="selectPlatformChange($event)" [(ngModel)]="selectGenre">
+    <label for="genre">Seleccionar Genero</label>
+    <select name="genre" id="genre" (ngModelChange)="selectGenreChange($event)" [(ngModel)]="selectGenre">
         <option *ngFor="let genre of genres" value="{{ genre }}">{{ genre }}</option>
-    </select> -->
+    </select>
 </div>

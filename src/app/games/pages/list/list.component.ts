@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from 'src/app/core/interfaces/game';
 import { GamesService } from 'src/app/core/services/games.service';
-import { Observable } from 'rxjs';
 import { FilterService } from 'src/app/core/services/filter.service';
 
 @Component({
@@ -11,19 +10,28 @@ import { FilterService } from 'src/app/core/services/filter.service';
 })
 export class ListComponent implements OnInit {
   games: Game[] = this.gamesService.games;
+  platform: string = '';
+  genre: string = '';
   constructor(private gamesService: GamesService, private filterService: FilterService) { }
 
   ngOnInit(): void {
     this.gamesService.getFilteredGames().subscribe((games: Game[]) => {
       this.games = games;
-      console.log('games list ' + this.games.length);
     });
 
     // Suscribirse al observable para recibir actualizaciones del filtro
     this.filterService.platformFilter$.subscribe((selectedPlatform: string) => {
-      this.gamesService.getFilteredGames(selectedPlatform).subscribe((games: Game[]) => {
+      this.platform = selectedPlatform;
+      this.gamesService.getFilteredGames(selectedPlatform, this.genre).subscribe((games: Game[]) => {
         this.games = games;
-        console.log('games list filtered ' + this.games.length);
+      });
+    });
+
+    // Suscribirse al observable para recibir actualizaciones del filtro
+    this.filterService.genreFilter$.subscribe((selectedGenre: string) => {
+      this.genre = selectedGenre;
+      this.gamesService.getFilteredGames(this.platform, selectedGenre).subscribe((games: Game[]) => {
+        this.games = games;
       });
     });
   }

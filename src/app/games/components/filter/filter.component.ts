@@ -1,34 +1,85 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Game } from 'src/app/core/interfaces/game';
 import { FilterService } from 'src/app/core/services/filter.service';
 import { GamesService } from 'src/app/core/services/games.service';
 
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
-  styleUrls: ['./filter.component.scss']
+  styleUrls: ['./filter.component.scss'],
 })
-export class FilterComponent implements OnInit{
-  constructor(private gamesService: GamesService, private filterService: FilterService) { }
+export class FilterComponent implements OnInit {
+  constructor(
+    private gamesService: GamesService,
+    private filterService: FilterService
+  ) {}
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
 
-  platforms: string[] = [
-    'pc',
-    'browser',
+  platforms: string[] = ['pc', 'browser'];
+
+  genres: string[] = [
+    'mmorpg',
+    'shooter',
+    ' strategy',
+    ' moba',
+    ' racing',
+    ' sports',
+    ' social',
+    ' sandbox',
+    'open-world',
+    ' survival',
+    ' pvp',
+    ' pve',
+    ' pixel',
+    ' voxel',
+    ' zombie',
+    'turn-based',
+    'first-person',
+    'third-Person',
+    'top-down',
+    'tank',
+    'space',
+    'sailing',
+    'side-scroller',
+    'superhero',
+    'permadeath',
+    'card',
+    'battle-royale',
+    'mmo',
+    'mmofps',
+    'mmotps',
+    '3d',
+    '2d',
+    'anime',
+    'fantasy',
+    'sci-fi',
+    'fighting',
+    'action-rpg',
+    'action',
+    'military',
+    'martial-arts',
+    'flight',
+    'low-spec',
+    'tower-defense',
+    'horror',
+    'mmorts',
   ];
 
   selectPlatform: string = '';
+  selectGenre: string = '';
 
   selectPlatformChange(event: string) {
     this.selectPlatform = event;
-    if(this.selectPlatform != '') {
+    if (this.selectPlatform != '') {
       this.filterService.setPlatformFilter(this.selectPlatform);
-      // this.gamesService.getFilteredGames(this.selectPlatform).subscribe((games: Game[]) => {
-      //   this.gamesService.games = games;
-      // });
+    }
+  }
+
+  selectGenreChange(event: string) {
+    this.selectGenre = event;
+    if (this.selectGenre != '') {
+      this.filterService.setGenreFilter(this.selectGenre);
     }
   }
 }
