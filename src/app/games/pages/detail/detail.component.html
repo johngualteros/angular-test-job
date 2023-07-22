@@ -73,7 +73,7 @@
         {{ game.description }}
     </p>
 
-    <div *ngIf="game.minimum_system_requirements.os != null">
+    <div *ngIf="game.minimum_system_requirements">
         <h2 class="my-3 text-center fw-bold">
             Requisitos minimos
         </h2>
@@ -114,14 +114,17 @@
         </p>
     </div>
 
-    <h2 class="my-3 text-center fw-bold">
-        Screenshots
-    </h2>
-
-    <div class="screenshots">
-        <div class="screenshot" *ngFor="let screenshot of game.screenshots">
-            <img [src]="screenshot.image" [alt]="screenshot.id">
+    <div *ngIf="game.screenshots.length > 0">
+        <h2 class="my-3 text-center fw-bold">
+            Screenshots
+        </h2>
+    
+        <div class="screenshots">
+            <div class="screenshot" *ngFor="let screenshot of game.screenshots">
+                <img [src]="screenshot.image" [alt]="screenshot.id">
+            </div>
         </div>
     </div>
+    
 
 </section>
