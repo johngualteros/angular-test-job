@@ -1,0 +1,16 @@
+<div class="filters">
+    <input type="text" placeholder="Search a game">
+</div>
+
+<div class="selects">
+    <label for="platform">Seleccionar Platforma</label>
+    <select name="platform" id="platform" (ngModelChange)="selectPlatformChange($event)" [(ngModel)]="selectPlatform">
+        <option value="all" default>All</option> 
+        <option *ngFor="let platform of platforms" value="{{ platform }}">{{ platform }}</option>
+    </select>
+    
+    <!-- <label for="genre">Seleccionar Genero</label>
+    <select name="genre" id="genre" (ngModelChange)="selectPlatformChange($event)" [(ngModel)]="selectGenre">
+        <option *ngFor="let genre of genres" value="{{ genre }}">{{ genre }}</option>
+    </select> -->
+</div>

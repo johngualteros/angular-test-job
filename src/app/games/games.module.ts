@@ -7,6 +7,8 @@ import { SharedModule } from '../shared/shared.module';
 import { CardComponent } from './components/card/card.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { DetailComponent } from './pages/detail/detail.component';
+import { FilterComponent } from './components/filter/filter.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,12 +16,14 @@ import { DetailComponent } from './pages/detail/detail.component';
     ListComponent,
     CardComponent,
     LoaderComponent,
-    DetailComponent
+    DetailComponent,
+    FilterComponent
   ],
   imports: [
     CommonModule,
     GamesRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ]
 })
 export class GamesModule { }

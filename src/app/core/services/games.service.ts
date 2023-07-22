@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.development';
 import { Game } from '../interfaces/game';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { DetailGame } from '../interfaces/detail-game';
+import { Observable, Subject } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -10,9 +12,22 @@ import { DetailGame } from '../interfaces/detail-game';
 export class GamesService {
   constructor(private http: HttpClient) { }
   private apiUrl = environment.apiURL;
-  getGames() {
-    // paginate
-    return this.http.get<Game[]>(`${this.apiUrl}/games`);
+  public games: Game[] = [];
+
+  getFilteredGames(platform: string = '', genre: string = ''): Observable<Game[]> {
+    let params = new HttpParams();
+    if (platform != '') {
+      params = params.append('platform', platform);
+    }
+    if (genre != '') {
+      params = params.append('category', genre);
+    }
+    return this.http.get<Game[]>(`${this.apiUrl}/games` , { params }).pipe(
+      map((response: any) => {
+        // Transform the response of api if it's necessary
+        return response;
+      })
+    );
   }
 
   getGame(id: number) {
