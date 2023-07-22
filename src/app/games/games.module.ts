@@ -10,6 +10,7 @@ import { DetailComponent } from './pages/detail/detail.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './components/search/search.component';
+import { MiniCardComponent } from './components/mini-card/mini-card.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { SearchComponent } from './components/search/search.component';
     LoaderComponent,
     DetailComponent,
     FilterComponent,
-    SearchComponent
+    SearchComponent,
+    MiniCardComponent
   ],
   imports: [
     CommonModule,

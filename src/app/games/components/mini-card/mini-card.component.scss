@@ -1,0 +1,29 @@
+@import '../../../styles/scss/shared.scss';
+
+.game {
+    width: 100%;
+    height: auto;
+    background-color: $dark-color;
+    border-radius: 5px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        background-color: darken($color: $dark-color, $amount: 10);
+    }
+    img {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        border-radius: 5px;
+    }
+    p {
+        background-color: transparent;
+        font-size: 16px;
+        color: $light-color;
+        font-weight: bold;
+    }
+}

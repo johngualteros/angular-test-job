@@ -1,35 +1,36 @@
-
-<!-- SEARCH MODAL -->
 <div class="container">
-    <div class="container-input" (click)="open()">
-        <a><i class="bi bi-search"></i></a>
-        <p>Buscar</p>
-        <div class="keys">
-
-            <div class="control-key">
-                ⌘
-            </div>
-            <div class="k-key">
-                K
+    <!-- SEARCH MODAL -->
+    <div class="container">
+        <div class="container-input" (click)="open()">
+            <a><i class="bi bi-search"></i></a>
+            <p>Buscar</p>
+            <div class="keys">
+    
+                <div class="control-key">
+                    ⌘
+                </div>
+                <div class="k-key">
+                    K
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-<div *ngIf="searchInput">
-    <app-search></app-search>
-</div>
-
-
-<div class="selects">
-    <label for="platform">Seleccionar Platforma</label>
-    <select name="platform" id="platform" (ngModelChange)="selectPlatformChange($event)" [(ngModel)]="selectPlatform">
-        <option value="all" default>All</option> 
-        <option *ngFor="let platform of platforms" value="{{ platform }}">{{ platform }}</option>
-    </select>
     
-    <label for="genre">Seleccionar Genero</label>
-    <select name="genre" id="genre" (ngModelChange)="selectGenreChange($event)" [(ngModel)]="selectGenre">
-        <option *ngFor="let genre of genres" value="{{ genre }}">{{ genre }}</option>
-    </select>
+    <div *ngIf="searchInput">
+        <app-search></app-search>
+    </div>
+    
+    
+    <div class="selects">
+        <label for="platform">Seleccionar Platforma</label>
+        <select name="platform" id="platform" (ngModelChange)="selectPlatformChange($event)" [(ngModel)]="selectPlatform">
+            <option value="all" default>All</option> 
+            <option *ngFor="let platform of platforms" value="{{ platform }}">{{ platform }}</option>
+        </select>
+        
+        <label for="genre">Seleccionar Genero</label>
+        <select name="genre" id="genre" (ngModelChange)="selectGenreChange($event)" [(ngModel)]="selectGenre">
+            <option *ngFor="let genre of genres" value="{{ genre }}">{{ genre }}</option>
+        </select>
+    </div>
 </div>

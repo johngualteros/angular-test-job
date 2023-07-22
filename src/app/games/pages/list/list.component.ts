@@ -16,6 +16,7 @@ export class ListComponent implements OnInit {
 
   ngOnInit(): void {
     this.gamesService.getFilteredGames().subscribe((games: Game[]) => {
+      this.gamesService.games = games;
       this.games = games;
     });
 
