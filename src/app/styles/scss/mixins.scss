@@ -26,8 +26,8 @@
 
 @mixin button-glitch($background) {
     position: relative;
-    padding: 10px 20px;
-    font-size: 36px;
+    padding: 10px 18px;
+    font-size: 30px;
     font-family: 'Tektur', sans-serif;
     background: linear-gradient(45deg, transparent 5%, $background 5%);
     border: 0;
