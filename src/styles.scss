@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+// importation of the font family
+@import url('https://fonts.googleapis.com/css2?family=Tektur&display=swap');
+@import './app/styles/scss/shared.scss';
+html, * {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $light-color;
+    background-color: $dark-color;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+button {
+    @include button-neon($primary-color);
+}
