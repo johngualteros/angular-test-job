@@ -1,7 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 // importation of the font family
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@900&family=Tektur&family=Ubuntu&display=swap');
+
+// importation of styles for angular notifier
+@import "node_modules/angular-notifier/styles";
+
+// imporation of the variables
 @import './app/styles/scss/shared.scss';
+
 html, * {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
@@ -40,4 +46,8 @@ button.glitch {
 
 span {
     @include span($primary-color);
+}
+
+p {
+    background-color: transparent;
 }

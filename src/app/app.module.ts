@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
+import { customNotifierOptions } from './core/design/config/notifierOptions';
+import { NotifierModule } from 'angular-notifier';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
     AppRoutingModule,
     SharedModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NotifierModule.withConfig(customNotifierOptions),
   ],
   providers: [
     {
