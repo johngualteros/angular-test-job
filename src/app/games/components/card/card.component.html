@@ -1,8 +1,8 @@
-<div class="card bg-transparent text-white">
+<ng-container class="card bg-transparent text-white">
     <img [src]="game.thumbnail" [alt]="game.title" class="card-image-top">
     <div class="card-body">
         <h5 class="card-title">{{ game.title }}</h5>
         <p class="card-text">{{ game.short_description }}</p>
         <button [routerLink]="['/games', game.id]" class="neon">View</button>
     </div>
-</div>
+</ng-container>
