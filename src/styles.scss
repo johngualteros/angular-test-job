@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 // importation of the font family
-@import url('https://fonts.googleapis.com/css2?family=Tektur&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@900&family=Tektur&family=Ubuntu&display=swap');
 @import './app/styles/scss/shared.scss';
 html, * {
     font-family: 'Roboto', sans-serif;
@@ -25,6 +25,19 @@ html, * {
     user-select: none
 }
 
-button {
+body {
+    background-color: $dark-color;
+    color: $light-color;
+}
+
+button.neon {
     @include button-neon($primary-color);
+}
+
+button.glitch {
+    @include button-glitch($primary-color);
+}
+
+span {
+    @include span($primary-color);
 }

@@ -3,21 +3,46 @@
     border: 1px solid $color;
     color: $color;
     box-shadow: 0 0 5px $color, 0 0 5px $color inset;
-    transition: all 0.3s ease; 
+    transition: all 0.3s ease;
     color: white;
     font-weight: bold;
     padding: 10px 20px;
-    &:hover{
+    font-family: 'Tektur', sans-serif;
+
+    &:hover {
         text-shadow:
-        0 0 20px $color,
-        0 0 50px rgba(33, 235, 255, .9),
-        0 0 75px rgba(33, 235, 255, .8),
-        0 0 76px rgba(33, 235, 255, .7),
-        0 0 77px rgba(33, 235, 255, .6),
-        0 0 78px rgba(33, 235, 255, .5),
-        0 0 79px rgba(33, 235, 255, .4),
-        0 0 80px rgba(33, 235, 255, .3),
-        0 0 85px rgba(33, 235, 255, .2),
-        0 0 99px rgba(33, 235, 255, .1);
-    } 
+            0 0 20px $color,
+            0 0 50px rgba(33, 235, 255, .9),
+            0 0 75px rgba(33, 235, 255, .8),
+            0 0 76px rgba(33, 235, 255, .7),
+            0 0 77px rgba(33, 235, 255, .6),
+            0 0 78px rgba(33, 235, 255, .5),
+            0 0 79px rgba(33, 235, 255, .4),
+            0 0 80px rgba(33, 235, 255, .3),
+            0 0 85px rgba(33, 235, 255, .2),
+            0 0 99px rgba(33, 235, 255, .1);
+    }
 }
+
+@mixin button-glitch($background) {
+    position: relative;
+    padding: 10px 20px;
+    font-size: 36px;
+    font-family: 'Tektur', sans-serif;
+    background: linear-gradient(45deg, transparent 5%, $background 5%);
+    border: 0;
+    margin: 10px 0;
+    color: #fff;
+    letter-spacing: 3px;
+    line-height: 88px;
+    box-shadow: 6px 0 0 #00e6f6;
+    outline: transparent;
+}
+
+@mixin span($color) {
+    color: $color;
+    font-weight: bold;
+    font-family: 'Tektur', sans-serif;
+}
+
+// KEY FRAMES
