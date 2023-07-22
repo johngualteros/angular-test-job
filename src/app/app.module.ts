@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
 import { customNotifierOptions } from './core/design/config/notifierOptions';
 import { NotifierModule } from 'angular-notifier';
+import { NgOptimizedImage } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { NotifierModule } from 'angular-notifier';
     HttpClientModule,
     BrowserAnimationsModule,
     NotifierModule.withConfig(customNotifierOptions),
+    NgOptimizedImage
   ],
   providers: [
     {

@@ -7,7 +7,7 @@
             <h1> {{ game.title }} </h1>
 
             <div class="d-block my-3">
-                <img [src]="game.thumbnail" [alt]="">
+                <img [src]="game.thumbnail" [alt]="game.title">
             </div>
 
             <p>Estado :
@@ -118,7 +118,7 @@
         Screenshots
     </h2>
 
-    <div class="screenshots mb-5">
+    <div class="screenshots">
         <div class="screenshot" *ngFor="let screenshot of game.screenshots">
             <img [src]="screenshot.image" [alt]="screenshot.id">
         </div>

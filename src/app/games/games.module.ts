@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 
 import { GamesRoutingModule } from './games-routing.module';
 import { ListComponent } from './pages/list/list.component';
@@ -10,7 +10,6 @@ import { FilterComponent } from './components/filter/filter.component';
 import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './components/search/search.component';
 import { MiniCardComponent } from './components/mini-card/mini-card.component';
-
 
 @NgModule({
   declarations: [
@@ -25,7 +24,8 @@ import { MiniCardComponent } from './components/mini-card/mini-card.component';
     CommonModule,
     GamesRoutingModule,
     SharedModule,
-    FormsModule
+    FormsModule,
+    NgOptimizedImage
   ]
 })
 export class GamesModule { }
