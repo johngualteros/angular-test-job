@@ -9,6 +9,7 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { DetailComponent } from './pages/detail/detail.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { FormsModule } from '@angular/forms';
+import { SearchComponent } from './components/search/search.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     CardComponent,
     LoaderComponent,
     DetailComponent,
-    FilterComponent
+    FilterComponent,
+    SearchComponent
   ],
   imports: [
     CommonModule,

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { ModalService } from 'src/app/core/design/services/modal.service';
 import { FilterService } from 'src/app/core/services/filter.service';
 import { GamesService } from 'src/app/core/services/games.service';
 
@@ -10,10 +11,13 @@ import { GamesService } from 'src/app/core/services/games.service';
 export class FilterComponent implements OnInit {
   constructor(
     private gamesService: GamesService,
-    private filterService: FilterService
+    private filterService: FilterService,
+    private searchModal: ModalService
   ) {}
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.searchModal.$openModal.subscribe((value) => {
+      this.searchInput = value;
+    });
   }
 
   platforms: string[] = ['pc', 'browser'];
@@ -81,5 +85,21 @@ export class FilterComponent implements OnInit {
     if (this.selectGenre != '') {
       this.filterService.setGenreFilter(this.selectGenre);
     }
+  }
+
+  // FUNCIOTNS FOR SEARCH A GAME
+  searchInput: boolean = false;
+
+  open() {
+    this.searchModal.$openModal.emit(true);
+  }
+
+  @HostListener('document:keydown.control.k', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent): void {
+    this.searchInputToggle();
+  }
+
+  searchInputToggle(): void {
+    this.searchModal.$openModal.emit(true);
   }
 }
