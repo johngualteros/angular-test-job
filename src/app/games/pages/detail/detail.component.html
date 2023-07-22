@@ -1,0 +1,127 @@
+<section class="detail-container" [ngStyle]="{'background-image': 'url(' + game.screenshots[0].image + ')'}">
+    <div class="content">
+        <div>
+            <a [routerLink]="['/games']">
+                Volver
+            </a>
+            <h1> {{ game.title }} </h1>
+
+            <div class="d-block my-3">
+                <img [src]="game.thumbnail" [alt]="">
+            </div>
+
+            <p>Estado :
+                <span>
+                    {{ game.status }}
+                </span>
+            </p>
+
+            <p>Genre :
+                <span>
+                    {{ game.genre }}
+                </span>
+            </p>
+        </div>
+        <div>
+            <a [href]="game.game_url" target="_blank">
+                Ver Juego
+            </a>
+
+            <p class="my-2">
+                Plataforma :
+                <span>
+                    {{ game.platform }}
+                </span>
+            </p>
+
+            <p>
+                Editor :
+                <span>
+                    {{ game.publisher }}
+                </span>
+            </p>
+
+            <p>
+                Desarrollador :
+                <span>
+                    {{ game.developer }}
+                </span>
+            </p>
+
+            <p>
+                Fecha de lanzamiento :
+                <span>
+                    {{ game.release_date }}
+                </span>
+            </p>
+
+            <p>
+                Conocer mas sobre el juego :
+                <a [href]="game.freetogame_profile_url" target="_blank">
+                    Ver mas
+                </a>
+            </p>
+        </div>
+    </div>
+</section>
+<section class="container">
+    <h2 class="my-3 text-center fw-bold">
+        Descripcion
+    </h2>
+
+    <p class="text-justify">
+        {{ game.description }}
+    </p>
+
+    <div *ngIf="game.minimum_system_requirements.os != null">
+        <h2 class="my-3 text-center fw-bold">
+            Requisitos minimos
+        </h2>
+
+        <p>
+            Sistema operativo :
+            <span>
+                {{ game.minimum_system_requirements.os }}
+            </span>
+        </p>
+
+        <p>
+            Procesador :
+            <span>
+                {{ game.minimum_system_requirements.processor }}
+            </span>
+        </p>
+
+        <p>
+            Memoria :
+            <span>
+                {{ game.minimum_system_requirements.memory }}
+            </span>
+        </p>
+
+        <p>
+            Graficos :
+            <span>
+                {{ game.minimum_system_requirements.graphics }}
+            </span>
+        </p>
+
+        <p>
+            Almacenamiento :
+            <span>
+                {{ game.minimum_system_requirements.storage }}
+            </span>
+        </p>
+    </div>
+
+    <h2 class="my-3 text-center fw-bold">
+        Screenshots
+    </h2>
+
+    <div class="screenshots">
+        <div class="screenshot" *ngFor="let screenshot of game.screenshots">
+            <img [src]="screenshot.image" [alt]="screenshot.id">
+        </div>
+    </div>
+
+</section>

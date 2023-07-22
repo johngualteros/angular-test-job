@@ -1,1 +1,13 @@
-<p>list works!</p>
+<!-- here filters -->
+<p>filters here</p>
+<app-separator></app-separator>
+
+<div class="container">
+    <h1 class="text-center">
+        LIST OF GAMES
+    </h1>
+
+    <div class="grid-container">
+        <app-card *ngFor="let game of games" [game]="game"></app-card>
+    </div>
+</div>
