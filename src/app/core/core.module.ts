@@ -4,6 +4,13 @@ import { CommonModule } from '@angular/common';
 import { CoreRoutingModule } from './core-routing.module';
 
 /**
+ * Http client module
+ * @see HttpClientModule
+ * @description
+ * This module provides HTTP client for Angular applications
+ */
+import { HttpClientModule } from '@angular/common/http';
+/**
  * Components layout
  */
 import { HeaderComponent } from './layout/header/header.component';
@@ -28,7 +35,6 @@ import { NotfoundComponent } from './pages/notfound/notfound.component';
  */
 import { SharedModule } from '../shared/shared.module';
 
-
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -38,7 +44,8 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     CoreRoutingModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule,
   ]
 })
 export class CoreModule { }
