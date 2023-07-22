@@ -4,7 +4,7 @@ import { Game } from '../interfaces/game';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { DetailGame } from '../interfaces/detail-game';
 import { Observable, Subject } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, shareReplay } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +26,9 @@ export class GamesService {
       map((response: any) => {
         // Transform the response of api if it's necessary
         return response;
-      })
+      }),
+      // save the last emitted value and share it with subscribers
+      shareReplay(1)
     );
   }
 
