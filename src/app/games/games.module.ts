@@ -5,7 +5,6 @@ import { GamesRoutingModule } from './games-routing.module';
 import { ListComponent } from './pages/list/list.component';
 import { SharedModule } from '../shared/shared.module';
 import { CardComponent } from './components/card/card.component';
-import { LoaderComponent } from './components/loader/loader.component';
 import { DetailComponent } from './pages/detail/detail.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { FormsModule } from '@angular/forms';
@@ -17,7 +16,6 @@ import { MiniCardComponent } from './components/mini-card/mini-card.component';
   declarations: [
     ListComponent,
     CardComponent,
-    LoaderComponent,
     DetailComponent,
     FilterComponent,
     SearchComponent,
