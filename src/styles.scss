@@ -35,18 +35,106 @@ body {
     background-color: $dark-color;
     color: $light-color;
 }
+body.blue {
+    button.neon {
+        @include button-neon($primary-color);
+    }
+    
+    button.glitch {
+        @include button-glitch($primary-color);
+    }
+    
+    span {
+        @include span($primary-color);
+    }
 
-button.neon {
-    @include button-neon($primary-color);
+    select {
+        background-color: $primary-color;
+    }
+
+    .container-input{
+        border: 1px solid $primary-color;
+    }
+
+    h1 {
+        color: $primary-color;
+        text-shadow: 10px 0 30px $primary-color;
+    }
+
+    h5 {
+        color: $primary-color;
+    }
+
+    .title {
+        animation:text-blue 3s linear infinite;
+    }
+
+    @keyframes text-blue{
+        0%,100%{
+            text-shadow:
+            0 0 5px rgba(0,178,255,1),
+            0 0 10px rgba(0,178,255,1),
+            0 0 20px rgba(0,178,255,1),
+            0 0 40px rgba(38,104,127,1),
+            0 0 80px rgba(38,104,127,1),
+            0 0 90px rgba(38,104,127,1),
+            0 0 100px rgba(38,104,127,1),
+            0 0 140px rgba(38,104,127,1),
+            0 0 180px rgba(38,104,127,1);
+            color:#ffffff;
+        }
+    }
 }
 
-button.glitch {
-    @include button-glitch($primary-color);
+body.pink {
+    button.neon {
+        @include button-neon($secondary-color);
+    }
+    
+    button.glitch {
+        @include button-glitch($secondary-color);
+    }
+    
+    span {
+        @include span($secondary-color);
+    }
+
+    select {
+        background-color: $secondary-color;
+    }
+
+    .container-input{
+        border: 1px solid $secondary-color;
+    }
+    h1 {
+        color: $secondary-color;
+        text-shadow: 10px 0 30px $secondary-color;
+    }
+    h5 {
+        color: $secondary-color;
+    }
+
+    .title {
+        animation:text-pink 3s linear infinite;
+    }
+
+    @keyframes text-pink{
+        0%,100%{
+            text-shadow:
+            0 0 5px rgb(204, 0, 255),
+            0 0 10px rgb(234, 0, 255),
+            0 0 20px rgb(234, 0, 255),
+            0 0 40px rgb(127, 38, 127),
+            0 0 80px rgb(127, 38, 120),
+            0 0 90px rgb(127, 38, 127),
+            0 0 100px rgb(117, 38, 127),
+            0 0 140px rgb(127, 38, 123),
+            0 0 180px rgb(127, 38, 123);
+            color:#ffffff;
+        }
+    }
 }
 
-span {
-    @include span($primary-color);
-}
 
 p {
     background-color: transparent;

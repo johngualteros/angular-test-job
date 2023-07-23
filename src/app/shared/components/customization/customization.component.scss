@@ -1,0 +1,28 @@
+@import '../../../styles/scss/shared.scss';
+
+.container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    .options {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 0;
+
+        .blue {
+            @include option($primary-color);
+            margin: 0 10px;
+        }
+
+        .pink {
+            @include option($secondary-color);
+            margin: 0 10px;
+        }
+    }
+}

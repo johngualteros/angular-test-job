@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { SeparatorComponent } from './components/separator/separator.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { LoaderComponent } from './components/loader/loader.component';
+import { CustomizationComponent } from './components/customization/customization.component';
 
 @NgModule({
   declarations: [
     SeparatorComponent,
     CarouselComponent,
-    LoaderComponent
+    LoaderComponent,
+    CustomizationComponent
   ],
   imports: [
     CommonModule,
@@ -16,7 +18,8 @@ import { LoaderComponent } from './components/loader/loader.component';
   exports: [
     SeparatorComponent,
     CarouselComponent,
-    LoaderComponent
+    LoaderComponent,
+    CustomizationComponent
   ]
 })
 export class SharedModule { }

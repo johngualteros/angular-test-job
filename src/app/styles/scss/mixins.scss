@@ -45,4 +45,12 @@
     font-family: 'Tektur', sans-serif;
 }
 
+@mixin option($background) {
+    width: 30px;
+    height: 30px;
+    background: $background;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
 // KEY FRAMES
