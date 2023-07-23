@@ -13,4 +13,8 @@ describe('ModalService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('should have $openModal property', () => {
+    expect(service.$openModal).toBeTruthy();
+  });
 });

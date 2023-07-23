@@ -13,4 +13,9 @@ describe('LoaderService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('should set loading to true', () => {
+    service.setLoading(true);
+    expect(service.getLoading()).toBeTrue();
+  });
 });
