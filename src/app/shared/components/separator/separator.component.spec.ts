@@ -18,4 +18,9 @@ describe('SeparatorComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should appear separator', () => {
+    const separator = fixture.nativeElement.querySelector('.separator');
+    expect(separator).toBeTruthy();
+  });
 });
