@@ -1,0 +1,14 @@
+/*
+    SCSS Variables
+*/
+$dark-color: #0f0415;
+$light-color: #f8f9fa;
+$primary-color: #3392dc;
+$secondary-color: #f806b9;
+
+:exports {
+    dark-color: $dark-color;
+    light-color: $light-color;
+    primary-color: $primary-color;
+    secondary-color: $secondary-color;
+}

@@ -1,0 +1,16 @@
+@import '../../../styles/scss/shared.scss';
+
+h5 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 1rem 0;
+    font-family: 'Tektur', cursive;
+    text-shadow: 10px 0 30px $light-color;
+}
+
+// media queries
+@media screen and (max-width: 768px) {
+    .card {
+        width: 100%;
+    }
+}

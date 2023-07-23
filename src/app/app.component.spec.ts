@@ -1,11 +1,16 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { ThemesService } from './core/design/services/themes.service';
+import { LoaderComponent } from './shared/components/loader/loader.component';
+import { NotifierModule } from 'angular-notifier';
+import { By } from '@angular/platform-browser';
 
 describe('AppComponent', () => {
   beforeEach(() => TestBed.configureTestingModule({
-    imports: [RouterTestingModule],
-    declarations: [AppComponent]
+    imports: [RouterTestingModule, NotifierModule],
+    declarations: [AppComponent, LoaderComponent],
+    providers: [ThemesService]
   }));
 
   it('should create the app', () => {
@@ -14,16 +19,11 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'angular-test'`, () => {
+  it('should appear loader', () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('angular-test');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('angular-test app is running!');
+    const loaderComponent = fixture.debugElement.query(
+      By.directive(LoaderComponent)
+    );
+    expect(loaderComponent).toBeTruthy();
   });
 });

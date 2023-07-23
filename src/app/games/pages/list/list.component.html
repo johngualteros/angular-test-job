@@ -1,0 +1,17 @@
+<!-- here filters -->
+<app-filter></app-filter>
+<app-separator></app-separator>
+
+<div class="container-carousel">
+    <app-carousel [slides]="games.slice(0, 5)"></app-carousel>
+</div>
+
+<div class="container">
+    <h1 class="text-center">
+        LIST OF GAMES
+    </h1>
+
+    <div class="grid-container">
+        <app-card *ngFor="let game of games" [game]="game"></app-card>
+    </div>
+</div>
