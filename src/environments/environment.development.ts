@@ -1,3 +1,3 @@
 export const environment = {
-    apiURL: 'https://www.freetogame.com/api'
+    apiURL: 'https://cors-anywhere.herokuapp.com/https://www.freetogame.com/api'
 };
