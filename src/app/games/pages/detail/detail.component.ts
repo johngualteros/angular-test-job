@@ -48,7 +48,6 @@ export class DetailComponent implements OnInit {
   getSingleGame() {
     this.gamesService.getGame(this.id).subscribe((game) => {
       this.game = game;
-      console.log(this.game);
     });
   }
 }
