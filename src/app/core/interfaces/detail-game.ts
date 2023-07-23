@@ -1,3 +1,4 @@
+// Object DetailGame
 export interface DetailGame {
     id: number;
     title: string;
@@ -16,6 +17,7 @@ export interface DetailGame {
     screenshots: Screenshot[];
 }
 
+// Object SystemRequirements
 interface SystemRequirements {
     os: string;
     processor: string;
@@ -24,6 +26,7 @@ interface SystemRequirements {
     storage: string;
 }
 
+// Object Screenshot
 interface Screenshot {
     id: number;
     image: string;

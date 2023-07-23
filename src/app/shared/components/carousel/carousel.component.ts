@@ -13,6 +13,7 @@ export class CarouselComponent implements OnInit{
 
   constructor() {}
 
+  // method for change slide every 5 seconds
   ngOnInit(): void {
     setInterval(() => {
       const next = this.currentSlide + 1;

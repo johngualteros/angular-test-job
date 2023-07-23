@@ -39,6 +39,7 @@ export class DetailComponent implements OnInit {
 
   }
   ngOnInit(): void {
+    // get id from url
     this.route.params.subscribe(params => {
       this.id = params['id'];
     });

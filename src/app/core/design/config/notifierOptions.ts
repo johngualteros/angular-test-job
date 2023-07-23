@@ -1,5 +1,8 @@
 import { NotifierOptions } from "angular-notifier";
-
+/**
+ * Custom angular notifier options
+ * @type {NotifierOptions}
+ */
 export const customNotifierOptions: NotifierOptions = {
     position: {
           horizontal: {

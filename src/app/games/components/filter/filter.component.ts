@@ -14,12 +14,14 @@ export class FilterComponent implements OnInit {
     private filterService: FilterService,
     private searchModal: ModalService
   ) {}
+  // open modal for search a game
   ngOnInit(): void {
     this.searchModal.$openModal.subscribe((value) => {
       this.searchInput = value;
     });
   }
 
+  // array of platforms and genres
   platforms: string[] = ['pc', 'browser'];
 
   genres: string[] = [
@@ -73,6 +75,7 @@ export class FilterComponent implements OnInit {
   selectPlatform: string = '';
   selectGenre: string = '';
 
+  // FUNCTIONS FOR FILTER GAMES
   selectPlatformChange(event: string) {
     this.selectPlatform = event;
     if (this.selectPlatform != '') {
@@ -94,6 +97,7 @@ export class FilterComponent implements OnInit {
     this.searchModal.$openModal.emit(true);
   }
 
+  // event listener for open search modal with control + k
   @HostListener('document:keydown.control.k', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent): void {
     this.searchInputToggle();

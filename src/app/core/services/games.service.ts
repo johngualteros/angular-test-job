@@ -11,9 +11,17 @@ import { map, shareReplay } from 'rxjs/operators';
 })
 export class GamesService {
   constructor(private http: HttpClient) { }
+  // url of api
   private apiUrl = environment.apiURL;
+  // array of games
   public games: Game[] = [];
 
+  /**
+   * method for get all games from api can be filtered by platform and genre
+   * @param platform 
+   * @param genre 
+   * @returns Observable<Game[]>
+   */
   getFilteredGames(platform: string = '', genre: string = ''): Observable<Game[]> {
     let params = new HttpParams();
     if (platform != '') {
@@ -32,6 +40,11 @@ export class GamesService {
     );
   }
 
+  /**
+   * method for get a game by id
+   * @param id 
+   * @returns 
+   */
   getGame(id: number) {
     return this.http.get<DetailGame>(`${this.apiUrl}/game?id=${id}`);
   }

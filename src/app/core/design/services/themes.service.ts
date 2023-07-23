@@ -9,6 +9,7 @@ export class ThemesService {
 
   setTheme(theme: String) {
     this.theme$.emit(theme);
+    // add variable to local storage
     localStorage.setItem('theme', theme.toString());
   }
 
